@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="sv">
+<!--
+  CSS visibility example
+  Written by Mikael Hasselmalm / Mid Sweden University
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">          
+  <title>CSS Display Attribute Example</title>
+  <style>
+    #page1, #page2 {
+        position: absolute;
+        top: 0px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="page1">
+  <h2>Page 1</h2>
+  <p>
+	  Write some characters <input type="text" id="intxt" />
+    <select id="fontval">
+      <option value="Arial">Arial</option>
+      <option value="Times New Roman">Times New Roman</option>
+    </select>
+    </p>
+    <p>
+	  <input type="button" id="swap1" value="View next page" />
+  </p>
+</div>
+
+<div id="page2">
+  <h2>Page 2</h2>
+  <p id="area"></p>
+  <input type="button" id="swap2" value="Back to page 1" />
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){ // Wait for the web page to finish loading
+
+      document.getElementById("page2").style.visibility = "hidden"; // Hide the second page initially
+
+      document.getElementById('swap1').addEventListener("click", function(e){ // Activate function when a click on button "byt1"
+        document.getElementById("page1").style.visibility = "hidden"; // Hide page1 
+        document.getElementById("page2").style.visibility = "visible"; // Show page2
+        document.getElementById("area").style.fontFamily = document.getElementById("fontval").value; // Use choosen font family
+        let txt = document.getElementById("intxt").value;
+        document.getElementById("area").innerHTML = txt; // Display the given text from the page1 textfield input
+      });
+
+      document.getElementById('swap2').addEventListener("click", function(e){ // Back to first page
+        document.getElementById("page2").style.visibility = "hidden"; // Hide page2 
+        document.getElementById("page1").style.visibility = "visible"; // Show page1
+      });
+
+    });
+</script>
+
+</body>
+</html>
