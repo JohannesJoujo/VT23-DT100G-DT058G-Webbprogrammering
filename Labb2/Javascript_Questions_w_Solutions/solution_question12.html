@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Solution Question 1.2</title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event){
+      document.getElementById("varde").innerHTML="1";
+    });
+
+	function showVal(newVal){
+  		document.getElementById("varde").innerHTML=newVal;
+	}
+
+	function printOut(){
+        	document.getElementById("resultat").innerHTML = "";
+		for (i=0;i<document.getElementById("ranger").value;i++)
+			document.getElementById("resultat").innerHTML += "Hello World<br/>";		
+	}
+  </script>
+
+</head>
+<body>
+
+  <input type="range" id="ranger" min="1" max="10" step="1" value="1" onchange="showVal(this.value)" />
+  <span id="varde"></span>
+
+  <p>
+  <input type="button" id="go" value="Print!" onclick="printOut()" />
+  <p id="resultat"></p>
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <title>Solution Question 1.3</title>
+</head>
+<body>
+
+  <script>
+    
+    var cars = ["Volvo", "Saab", "Fiat", "Honda", "Seat", "Skoda"];
+
+    var str = "<ul>";
+		for (i=0;i<cars.length;i++)
+			str += "<li>"+cars[i]+"</li>";
+    str += "</ul>";
+    str += "<p>Antal bilar: "+cars.length+" stycken.</p>";
+    document.body.innerHTML = str;
+
+  </script>
+
+</body>
+</html>

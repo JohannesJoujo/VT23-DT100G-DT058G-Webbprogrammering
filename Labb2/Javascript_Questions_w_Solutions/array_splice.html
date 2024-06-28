@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <title>Array add and splice test</title>
+
+  <script>
+    var textarray = [];
+
+    function insertVal(newVal){
+        textarray.push(newVal);
+        str = "";
+        for(i=0;i<textarray.length;i++)
+  		  str += "<span id='"+i+"' onclick='deleteElem(i)'>"+textarray[i]+"</span><br/>";
+        document.getElementById("container").innerHTML = str;
+    }
+    
+    function deleteElem(row){
+        textarray.splice(row, 1);
+        str = "";
+        for(i=0;i<textarray.length;i++)
+  		  str += "<span id='"+i+"' onclick='deleteElem("+i+")'>"+textarray[i]+"</span><br/>";
+        document.getElementById("container").innerHTML = str;
+    }
+
+  </script>
+
+</head>
+<body>
+
+  <input type="text" id="txt" />
+  <input type="button" id="insert" value="Print!" onclick="insertVal(txt.value)" />
+  <div id="container"></div>
+
+</body>
+</html>

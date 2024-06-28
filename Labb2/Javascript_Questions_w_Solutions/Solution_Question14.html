@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Solution Question 1.4</title>
+  <style>
+    table, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    
+var teachers = [
+	{"Mattias Dahlgren" : "mattias.dahlgren@miun.se"},
+	{"Mikael Hasselmalm" : "mikael.hasselmalm@miun.se"},
+	{"Elisabeth Gradin" : "elisabeth.gradin@miun.se"},
+	{"Jan-Erik Jonsson" : "jan-erik.jonsson@miun.se"},
+	{"Malin Svensson" : "malin.svensson@miun.se"}
+];
+    
+    str = "<table><tr><td><strong>Namn</strong></td><td><strong>E-post</strong></td>";
+		for(i=0;i<teachers.length;i++){
+          str += "<tr>";
+
+          for(var key in teachers[i]){
+              str += "<td>"+key+"</td>";
+              str += "<td><a href='mailto:"+teachers[i][key]+"'>"+teachers[i][key]+"</a></td>";
+          }
+          
+          str += "</tr>";
+        }
+    str += "</table>";
+    
+    document.body.innerHTML = str;
+  </script>
+
+</body>
+</html>
